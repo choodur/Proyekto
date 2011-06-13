@@ -1,0 +1,13 @@
+
+  <p><%= f.label :name %><br />
+  <%= f.text_field :name %></p>
+
+  <p><%= f.label :description %><br />
+  <%= f.text_field :description %></p>
+  
+  <%= f.label :status %><br />
+  <%=  f.select :status, options_for_select('Active' => 'Active', 'Closed' => 'Closed') %><br />
+
+  <p><%= f.submit %></p>
+
+

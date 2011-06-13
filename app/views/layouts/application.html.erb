@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Proyekto | Project Mangement System</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :all %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<div id="nav_bg"></div>
+  <div id="divider"></div>
+  <div class="container_12">
+    <div class="grid_12" id="header"> 
+      <span id="logo">Proyekto<small>Project Management System</small></span>
+      <% if user_signed_in? %>
+      <ul id="nav">
+        <li><%= link_to "Dashboard", root_path %></li>
+        <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to "Projects", projects_path %></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path  %></li>
+        <% if not @projects.empty? %>
+        <li>
+          <select id="project-options-list">
+            <option>Choose a Project</option>
+            <% @projects.each do |p| %>
+            <option value="<%= project_path(p)%>"><%= p.name %></option>
+            <% end %>
+          </select>  
+        </li>
+        <% end %>
+      </ul>  
+      <% end %>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <%= yield %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

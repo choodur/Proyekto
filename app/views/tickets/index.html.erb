@@ -1,0 +1,21 @@
+hello ticket index
+
+<table>
+  <tr>
+    <th width="200">Name</th>
+    <th width="200">Description</th>
+    <th width="200"></th>
+  </tr>
+
+<% @tickets.each do |ticket| %>
+  <tr>
+    <td><%= ticket.name %></td>
+    <td><%= ticket.description %></td>
+    <td><%= link_to 'Show', ticket %> | <%= link_to 'Edit', edit_ticket_path(ticket) %> | <%= link_to 'Destroy', ticket, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ticket', new_ticket_path %>

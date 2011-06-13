@@ -1,0 +1,22 @@
+
+hello project index
+
+<table>
+  <tr>
+    <th width="200">Name</th>
+    <th width="200">Description</th>
+    <th width="200"></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.name %></td>
+    <td><%= project.description %></td>
+    <td><%= link_to 'Show', project %> | <%= link_to 'Edit', edit_project_path(project) %> | <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project', new_project_path %>
