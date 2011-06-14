@@ -1,5 +1,5 @@
 <!--<%= link_to "Sign Up", new_user_registration_path%>-->
-
+<div class="grid_12">
 <% if not user_signed_in?%>
 <div id="sign-in-form"> 
 <h1>Sign In</h1>
@@ -14,8 +14,7 @@
   
   
   <p>
-  <%= f.label :remember_me %>
-  <%= f.check_box :remember_me, :id => "remember_me"%></p>
+  <%= f.check_box :remember_me, :id => "remember_me"%> Remember Me</p>
   
   
   <%= f.submit 'Sign in' %>
@@ -30,3 +29,4 @@ What do you want to do:
 <br /><%= link_to "Go to Project List", projects_path %>
 <br /><%= link_to "Go to Ticket List", tickets_path %>
 <% end %>
+</div>

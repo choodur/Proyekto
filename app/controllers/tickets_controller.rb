@@ -1,8 +1,9 @@
 class TicketsController < ApplicationController
   before_filter :get_projects
+  before_filter :get_project, :only => [:index, :create]
 
   def index
-    @tickets = Ticket.all
+    @tickets = @project.tickets
   end
   
   def show
@@ -18,19 +19,18 @@ class TicketsController < ApplicationController
   end
   
   def create
-    @ticket = Ticket.new(params[:ticket])
-    if @ticket.save
-      redirect_to tickets_path
-    else
-      render :new
-    end
+    @ticket = @project.tickets.build(params[:ticket])
+    @ticket.project_id = current_user.id;
+    @tickets = @project.tickets
+    
+    @ticket.save
   end
   
   def update
     @ticket = Ticket.find(params[:id])
 
     if @ticket.update_attributes(params[:ticket])
-      redirect_to tickets_path
+      redirect_to projects_path
     else
       render :edit
     end
@@ -40,12 +40,16 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
     @ticket.destroy
 
-    redirect_to tickets_path
+    redirect_to projects_path
   end
   
 private
   
   def get_projects
     @projects = Project.all
+  end
+  
+  def get_project
+    @project = Project.find params[:project_id]
   end
 end

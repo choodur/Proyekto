@@ -21,6 +21,13 @@ $(function()
     else
         $(".form_role").slideDown();
   });
+  
+  function proj_change_selected(index)
+  {
+    $("#proj_nav li a").attr("id", "");
+    $("#proj_nav li a:eq(" + index + ")").attr("id", "selected");
+  }
+  
 
   $("#user_birthdate").attr("readonly", "readonly")
 

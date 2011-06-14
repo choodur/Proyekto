@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110613093747) do
+ActiveRecord::Schema.define(:version => 20110614072338) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(:version => 20110613093747) do
   add_index "projects", ["name"], :name => "index_projects_on_name"
   add_index "projects", ["status"], :name => "index_projects_on_status"
   add_index "projects", ["tag_id"], :name => "index_projects_on_tag_id"
+
+  create_table "projects_users", :id => false, :force => true do |t|
+    t.integer "project_id"
+    t.integer "user_id"
+  end
+
+  add_index "projects_users", ["project_id"], :name => "index_projects_users_on_project_id"
+  add_index "projects_users", ["user_id"], :name => "index_projects_users_on_user_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"

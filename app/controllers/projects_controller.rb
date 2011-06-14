@@ -1,12 +1,13 @@
 class ProjectsController < ApplicationController
   before_filter :get_projects
+  before_filter :get_project, :only => [:show, :edit, :update, :destroy]
 
   def index
     @projects = Project.all
   end
   
   def show
-    @project = Project.find(params[:id])
+
   end 
   
   def new
@@ -14,7 +15,7 @@ class ProjectsController < ApplicationController
   end
   
   def edit
-    @project = Project.find(params[:id])
+
   end
   
   def create
@@ -27,8 +28,6 @@ class ProjectsController < ApplicationController
   end
   
   def update
-    @project = Project.find(params[:id])
-
     if @project.update_attributes(params[:project])
       redirect_to projects_path
     else
@@ -37,16 +36,24 @@ class ProjectsController < ApplicationController
   end
   
   def destroy
-    @project = Project.find(params[:id])
     @project.destroy
 
     redirect_to projects_path
+  end
+  
+  
+  def overview
+    @project = Project.find params[:project_id]
   end
   
 private
   
   def get_projects
     @projects = Project.all
+  end
+  
+  def get_project
+    @project = Project.find params[:id]
   end
   
 end

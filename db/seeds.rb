@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+user = User.create( 
+  :username               => 'admin'
+  :first_name             => 'admin', 
+  :last_name              => 'admin',  
+  :email                  => 'tudorblink@gmail.com', 
+  :password               => 'password' 
+  :password_confirmation   => 'password' 
+).confirm! 

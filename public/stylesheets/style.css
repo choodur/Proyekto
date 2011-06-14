@@ -3,6 +3,7 @@
   padding: 0;
   font-family: Helvetica, Arial, sans-serif;
   color: #313131;
+  
 }
 
 a {
@@ -24,6 +25,22 @@ fieldset ul li {
   margin: 2px 5px;
 }
 
+h1, h2, h3  { 
+  color: #004480;
+  margin: 0 0 10px;
+  padding: 0 0 0 10px;
+}
+
+h1, h2 { 
+  border-bottom: 1px solid #001A31;
+  background: #F1F1F1;
+  background: -moz-linear-gradient(center top , #FFFFFF, #F1F1F1);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#F1F1F1));
+}
+
+.right { float: right; }
+
+.clear { clear: both; }
 /********************** Start HEADER **********************/
 
 #nav_bg {
@@ -124,13 +141,14 @@ fieldset ul li {
 
 form {
   font-size: 13px;
+  width:408px;
 }
 
 form label {
    display: inline-block;
    height: 30px;
    text-align: right;
-   width: 200px;
+   width: 150px;
 }
 
 form label:after {
@@ -165,6 +183,7 @@ form input[type=submit]:hover {
   background: #004480;
   background: -moz-linear-gradient(center top , #325986, #004480) repeat scroll 0 0 transparent;
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#325986), to(#004480));
+  border: 1px solid #004480;
 }
 
 fieldset label, #remember_me {
@@ -186,6 +205,7 @@ fieldset {
 .content_tbl {
   width: 100%;
   border-collapse: collapse;
+  font-size: 14px;
 }
 
 .content_tbl th {
@@ -209,5 +229,46 @@ fieldset {
   background: #efefef;
 }
 
+.submit-button {
+  margin: 10px 0 0 0;
+}
+
+/********************** PROJECTS PAGE **********************/
+
+/********************** Navigation **********************/
+
+#proj_nav {
+  margin: -44px 0 10px 0;
+  float: right;
+}
+
+#proj_nav li {
+  list-style: none;
+  float: left;
+  margin: 4px 15px;
+}
+
+#proj_nav li a {
+  display: block;
+  width: 100%;
+  color:  #fff;
+  padding: 4px 8px;
+  text-align: center;
+  font: bold 12px Helvetica;
+  background: #001A31;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
+#proj_nav li a:hover {
+  background: #004480;
+  text-decoration: none;
+}
+
+#proj_nav #selected {
+  color: #004480;
+  background: #fff;
+  border: 1px solid #004480;
+}
 
 /********************** End MAIN CONTENT **********************/

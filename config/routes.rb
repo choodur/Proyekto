@@ -6,7 +6,10 @@ Proyekto::Application.routes.draw do
   
   resources :users
     
-  resources :projects
+  resources :projects do
+    get 'overview', :to => 'projects#overview'
+    resources :tickets
+  end
   
   resources :tickets do
     resources :comments
