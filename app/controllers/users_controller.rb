@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :get_projects
+  before_filter :get_roles, :only => [:new, :edit]
 
   def index
     @users = User.all
@@ -37,6 +38,10 @@ private
   
   def get_projects
     @projects = Project.all
+  end
+  
+  def get_roles
+    @roles = Role.all
   end
   
 end

@@ -2,7 +2,8 @@ class TicketsController < ApplicationController
   before_filter :get_projects
 
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.search(params[:date], params[:status], params[:priority])
+    @users = User.search(params[:name])
   end
   
   def show

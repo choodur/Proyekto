@@ -1,17 +1,17 @@
 
-  <p><%= f.label :name %><br />
+  <p><%= f.label :name %>
   <%= f.text_field :name %></p>
 
-  <p><%= f.label :description %><br />
+  <p><%= f.label :description %>
   <%= f.text_field :description %></p>
   
-  <%= f.label :status %><br />
-  <%=  f.select :status, options_for_select('Active' => 'Active', 'Closed' => 'Closed') %><br />
+  <p><%= f.label :status %>
+  <%=  f.select :status, options_for_select('Active' => 'Active', 'Closed' => 'Closed') %></p>
 
-  <%= f.label :priority %><br />
-  <%=  f.select :priority, options_for_select('Minor' => 'Minor', 'Normal' => 'Normal', 'Major' => 'Major', 'Practical' => 'Practical') %><br />
+  <p><%= f.label :priority %>
+  <%=  f.select :priority, options_for_select('Minor' => 'Minor', 'Normal' => 'Normal', 'Major' => 'Major', 'Practical' => 'Practical') %></p>
   
-  <%= f.label :tracker %><br />
-  <%=  f.select :tracker, options_for_select('Bug' => 'Bug', 'Task' => 'Task') %><br />
+  <p><%= f.label :tracker %>
+  <%=  f.select :tracker, options_for_select('Bug' => 'Bug', 'Task' => 'Task') %></p>
 
   <p><%= f.submit %></p>
