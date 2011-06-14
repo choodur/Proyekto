@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :middle_name, :last_name, :user_name, :birthdate, :admin, :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   
+  validates_presence_of :first_name, :middle_name, :last_name, :user_name, :email
+  
   def full_name
     "#{self.last_name.capitalize}, #{self.first_name.capitalize} #{self.middle_name[0].capitalize}."
   end
