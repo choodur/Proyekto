@@ -1,30 +1,37 @@
 
-  <p><%= f.label :user_name %><br />
+  <p><%= f.label :user_name %>
   <%= f.text_field :user_name %></p>
 
-  <p><%= f.label :email %><br />
+  <p><%= f.label :email %>
   <%= f.email_field :email %></p>
 
-  <p><%= f.label :first_name %><br />
+  <p><%= f.label :first_name %>
   <%= f.text_field :first_name %></p>
   
-  <p><%= f.label :middle_name %><br />
+  <p><%= f.label :middle_name %>
   <%= f.text_field  :middle_name %></p>
   
-  <p><%= f.label :last_name %><br />
+  <p><%= f.label :last_name %>
   <%= f.text_field  :last_name %></p>
   
-  <p><%= f.label :admin %><br />
+  <p><%= f.label :admin %>
   <%= f.check_box :admin %></p>
 
-  <p><%= f.label :password %><br />
+  <p><%= f.label :password %>
   <%= f.password_field :password %></p>
 
-  <p><%= f.label :password_confirmation %><br />
+  <p><%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %></p>
   
-  <p><%= f.label :birthdate %><br />
-  <%= f.text_field :birthdate, :readonly => "readonly" %></p>
+  <% if not @roles.empty? %>
+  <div class="form_role">
+  <%= f.label "Role"%>
+  <%= f.select :role_id, options_from_collection_for_select(@roles, 'id', 'name')%>
+  </div>
+  <% end %>
+  
+  <p><%= f.label :birthdate %>
+  <%= f.text_field :birthdate %></p>
 
   <p><%= f.submit "Send" %></p>
 

@@ -1,14 +1,14 @@
 hello ticket index
 
-<table>
+<table class="content_tbl">
   <tr>
-    <th width="200">Name</th>
-    <th width="200">Description</th>
-    <th width="200"></th>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
   </tr>
 
 <% @tickets.each do |ticket| %>
-  <tr>
+  <tr class="<%= cycle("", "even")%>">
     <td><%= ticket.name %></td>
     <td><%= ticket.description %></td>
     <td><%= link_to 'Show', ticket %> | <%= link_to 'Edit', edit_ticket_path(ticket) %> | <%= link_to 'Destroy', ticket, :confirm => 'Are you sure?', :method => :delete %></td>

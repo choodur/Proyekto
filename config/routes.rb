@@ -2,7 +2,7 @@ Proyekto::Application.routes.draw do
 
   post 'users' => 'users#create' #override devise's registration to maintain RESTful interface
 
-  devise_for :users
+  devise_for :users, :maximum_attempts => 3, :unlock_strategy => :time, :unlock_in => 1, :controllers => { :confirmations => 'users/confirmations' }
   
   resources :users
     
@@ -11,6 +11,8 @@ Proyekto::Application.routes.draw do
   resources :tickets do
     resources :comments
   end
+  
+  resources :roles
   
   root :to => "application#index"
   # The priority is based upon order of creation:

@@ -1,0 +1,69 @@
+  <p><%= f.label :name %>
+  <%= f.text_field :name %></p>
+  
+  
+<h3>Permissions</h3>
+
+
+
+<fieldset>
+  <legend> Projects  </legend>
+  <ul>
+  
+    <li><%= f.check_box :project_create %><%= f.label "Create" %></li>
+  
+    <li><%= f.check_box :project_read %><%= f.label "Read" %></li>
+  
+    <li><%= f.check_box :project_update %><%= f.label "Update" %></li>
+
+    <li><%= f.check_box :project_delete %><%= f.label "Delete" %></li>
+    
+   </ul>
+</fieldset>
+
+<fieldset>
+  <legend> Project Members </legend>
+  <ul>
+  
+    <li><%= f.check_box :member_add %><%= f.label "Add" %></li>
+  
+    <li><%= f.check_box :member_remove %><%= f.label "Remove" %></li>
+    
+  </ul>
+</fieldset> 
+
+
+<fieldset>
+  <legend> Tickets  </legend>  
+  <ul>
+  
+    <li><%= f.check_box :ticket_create %><%= f.label "Create" %></li>
+
+    <li><%= f.check_box :ticket_read %><%= f.label "Read" %></li>
+
+    <li><%= f.check_box :ticket_update %><%= f.label "Update" %></li>
+  
+    <li><%= f.check_box :ticket_delete %><%= f.label "Delete" %></li>
+
+    <li><%= f.check_box :ticket_assign %><%= f.label "Assign" %></li>
+    
+    <li><%= f.check_box :ticket_comment %><%= f.label "Comment" %></li>
+    
+   </ul>
+</fieldset>
+
+<fieldset>
+  <legend> Tags  </legend>  
+  <ul>
+    <li><%= f.check_box :tag_create %><%= f.label "Create" %></li>
+
+    <li><%= f.check_box :tag_read %><%= f.label "Read" %></li>
+
+    <li><%= f.check_box :tag_update %><%= f.label "Update" %></li>
+
+    <li><%= f.check_box :tag_delete %><%= f.label "Delete" %></li>
+  </ul>
+  
+</fieldset>
+
+<p><%= f.submit %></p>
