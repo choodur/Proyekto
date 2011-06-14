@@ -1,0 +1,3 @@
+$(".project_page_content").html("<%= escape_javascript(render :partial => 'tickets/index', :locals => { :project => @project } ) %>").hide().fadeIn();
+$("#proj_nav li a").attr("id", "");
+$("#proj_nav li a:eq(1)").attr("id", "selected");

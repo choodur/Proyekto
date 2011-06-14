@@ -1,0 +1,31 @@
+
+<% if not @ticket.errors.any?%>
+
+$(".project_page_content").html("<%= escape_javascript(render :partial => 'tickets/index', :locals => { :project => @project } ) %>").hide().fadeIn();
+$("#proj_nav li a").attr("id", "");
+$("#proj_nav li a:eq(1)").attr("id", "selected");
+
+<% else %>
+var div_con = "<div id=\"dialog-message\">";
+
+<% @ticket.errors.full_messages.each do |msg| %>
+div_con += "<%= msg %><br/>" ;  
+<% end %>
+
+div_con += "</div>";
+$("body").append(div_con);
+$( "#dialog-message" ).dialog({
+      title: "Create Ticket Error",
+			modal: true,
+			buttons: {
+				Ok: function() {
+					$( this ).dialog( "close" );
+					$(this).remove();
+				}
+			}
+		});
+
+<% end %>
+
+
+
