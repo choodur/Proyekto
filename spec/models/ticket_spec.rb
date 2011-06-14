@@ -25,6 +25,10 @@ describe Ticket do
     @ticket.tracker = 'Bug'
     @ticket.should have(0).error_on(:tracker)
   end
+  it "should not have empty created_by" do
+    @ticket.created_by = 1
+    @ticket.should have(0).error_on(:created_by)
+  end
   it "should not have empty created_at" do
     @ticket.created_at = '2011-06-03 02:47:33'
     @ticket.should have(0).error_on(:created_at)
